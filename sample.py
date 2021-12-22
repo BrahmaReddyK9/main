@@ -5,8 +5,6 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-chrome_options.add_argument('--headless')
-chrome_options.add_argument('--no-sandbox')
 driver = webdriver.Chrome(executable_path="/usr/bin/google-chrome")
 
 #driver = webdriver.Firefox()
