@@ -1,16 +1,21 @@
 import time
 
-
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 
-driver = webdriver.Chrome(executable_path="/usr/bin/google-chrome")
 
-#driver = webdriver.Firefox()
-#driver = webdriver.Ie(executable_path=r"C:\Users\Sharad\Desktop\drivers\IEDriverServer.exe")
-driver.get("https://www.amazon.com/")
-print(driver.title)
-driver.find_element_by_xpath("//*[@id='nav-link-accountList']/div").click()
-time.sleep(5)
-driver.close()    #currently focused browser
-#driver.quit()     #closes all the browser
+
+driver = webdriver.Chrome('/path/to/chromedriver')  # Optional argument, if not specified will search path.
+
+driver.get('http://www.google.com/');
+
+time.sleep(5) # Let the user actually see something!
+
+search_box = driver.find_element_by_name('q')
+
+search_box.send_keys('ChromeDriver')
+
+search_box.submit()
+
+time.sleep(5) # Let the user actually see something!
+
+driver.quit()
