@@ -4,7 +4,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver")
+driver = webdriver.Chrome(executable_path="/usr/bin/google-chrome")
 
 #driver = webdriver.Firefox()
 #driver = webdriver.Ie(executable_path=r"C:\Users\Sharad\Desktop\drivers\IEDriverServer.exe")
