@@ -5,10 +5,10 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(executable_path="/usr/bin/google-chrome)
 
 #driver = webdriver.Firefox()
-driver = webdriver.Ie(executable_path="/usr/bin/google-chrome")
+#driver = webdriver.Ie(executable_path="/usr/bin/google-chrome")
 driver.get("https://www.amazon.com/")
 print(driver.title)
 driver.find_element_by_xpath("//*[@id='nav-link-accountList']/div").click()
