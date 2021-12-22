@@ -3,9 +3,13 @@ import time
 #author name- sharad Tiwari
 
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.keys import Keys
 
-driver = webdriver.Chrome(executable_path="/usr/bin/google-chrome")
+s=Service("/usr/bin/google-chrome")
+
+driver = webdriver.Chrome(service=s)
+#driver = webdriver.Chrome(executable_path="/usr/bin/google-chrome")
 
 #driver = webdriver.Firefox()
 #driver = webdriver.Ie(executable_path="/usr/bin/google-chrome")
