@@ -4,7 +4,7 @@ from selenium import webdriver
 
 
 
-driver = webdriver.Chrome('/path/to/chromedriver')  # Optional argument, if not specified will search path.
+driver = webdriver.Chrome('/usr/bin/chromedriver')  # Optional argument, if not specified will search path.
 
 driver.get('http://www.google.com/');
 
