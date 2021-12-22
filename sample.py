@@ -1,16 +1,16 @@
+import time
+
+
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.keys import Keys
 
-chrome_options = Options()
-chrome_options.add_argument('--no-sandbox')
-chrome_options.add_argument('--headless')
-chrome_options.add_argument('--disable-gpu')
-chrome_options.add_argument('--disable-dev-shm-usage')
-chrome_options.add_argument('--profile-directory=Default')
-chrome_options.add_argument('--user-data-dir=/usr/bin/chromedriver')
+driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver")
 
-driver = webdriver.Chrome(options=chrome_options)
-url = 'https://www.google.com'
-driver.get(url) 
-get_url = driver.current_url 
-print(get_url)
+#driver = webdriver.Firefox()
+#driver = webdriver.Ie(executable_path=r"C:\Users\Sharad\Desktop\drivers\IEDriverServer.exe")
+driver.get("https://www.amazon.com/")
+print(driver.title)
+driver.find_element_by_xpath("//*[@id='nav-link-accountList']/div").click()
+time.sleep(5)
+driver.close()    #currently focused browser
+#driver.quit()     #closes all the browser
