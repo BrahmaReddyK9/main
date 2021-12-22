@@ -1,17 +1,12 @@
-import time
-
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
-from selenium.webdriver.chrome.service import Service
-
-service = Service('/usr/local/bin/chromedriver')
-
-service.start()
-
-driver = webdriver.Remote(service.service_url)
-
-driver.get('http://www.google.com/');
-
-time.sleep(5) # Let the user actually see something!
-
-driver.quit()
+options = Options()
+options.binary_location = "/usr/bin/chromedriver"    #chrome binary location specified here
+options.add_argument("--start-maximized") #open Browser in maximized mode
+options.add_argument("--no-sandbox") #bypass OS security model
+options.add_argument("--disable-dev-shm-usage") #overcome limited resource problems
+options.add_experimental_option("excludeSwitches", ["enable-automation"])
+options.add_experimental_option('useAutomationExtension', False)
+driver = webdriver.Chrome(options=options, executable_path=r'/usr/bin/chromedriver')
+driver.get('http://google.com/')
