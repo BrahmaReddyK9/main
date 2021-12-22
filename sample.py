@@ -8,7 +8,7 @@ from selenium.webdriver.common.keys import Keys
 driver = webdriver.Chrome()
 
 #driver = webdriver.Firefox()
-driver = webdriver.Ie(executable_path="/usr/bin/chromedriver")
+driver = webdriver.Ie(executable_path="/usr/bin/google-chrome")
 driver.get("https://www.amazon.com/")
 print(driver.title)
 driver.find_element_by_xpath("//*[@id='nav-link-accountList']/div").click()
